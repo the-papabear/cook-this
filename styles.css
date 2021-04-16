@@ -1,0 +1,21 @@
+body {
+  height: 100%;
+  margin: auto;
+  background-color: palegreen;
+}
+.app-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.container {
+  background-color: orangered;
+}
+
+.ingredients-container {
+  flex-basis: 33%;
+}
+
+.recipes-container {
+  flex-basis: 67%;
+}
