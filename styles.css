@@ -24,13 +24,38 @@ header {
 .ingredients-container {
   float: left;
   flex-basis: 30%;
-  border: 1px solid black;
   margin: 0 1rem 1rem 0;
+}
+
+.ingredients-container__cards{
+  max-width: 400px;
+  height: 150px;
+  border: 1px solid black;
+  margin-bottom: 1rem;  
+}
+
+.favourite-recipes{
+  margin-bottom: none;
 }
 
 .recipes-container {
   flex-basis: 60%;
+}
+
+.recipes-container__cards{
+  max-width: 800px;
+  height: 234px;
   border: 1px solid black;
+  margin-bottom: 1rem;
+}
+
+.recipe-review{
+  margin-bottom: none;
+}
+
+.about-app{
+  margin: auto;
+  width: 50%;
 }
 
 /* MEDIA QUERIES: */

@@ -14,20 +14,21 @@
     </header>
     <div class="app-container">
       <div class="container ingredients-container">
-        Section 1
-        <div class="card ingredient-search">Ingredients</div>
-        <div class="card ingredient-history">Ingredients history</div>
-        <div class="card favourite-recipes">Favorite recipes</div>
+        <div class="ingredients-container__cards ingredient-search">
+          <label for = "ingredients">Search ingredients:</label> <br>
+          <input type = "search" id = "ingredients" name = "ingredients">
+        </div>
+        <div class="ingredients-container__cards ingredient-history">What you searched for most:</div>
+        <div class="ingredients-container__cards favourite-recipes">Favorite recipes:</div>
       </div>
-      <div class="container recipes-container">
-        Section 2
-        <div class="random-recipe-generator">
+      <div class="recipes-container">
+        <div class="recipes-container__cards random-recipe-generator">
           Random recipe generator
           <img class="recipe-photo" />
         </div>
-        <div class="recipe-review">Recipe review</div>
-        <div class="about-app">About app and dev</div>
+        <div class="recipes-container__cards recipe-review">Recipe review</div>
       </div>
     </div>
+    <footer class="about-app">About app and dev</footer>
   </body>
 </html>
