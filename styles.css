@@ -31,7 +31,8 @@ header {
   max-width: 400px;
   height: 150px;
   border: 1px solid black;
-  margin-bottom: 1rem;  
+  margin-bottom: 1rem; 
+  border-radius: 5px;
 }
 
 .favourite-recipes{
@@ -47,6 +48,7 @@ header {
   height: 234px;
   border: 1px solid black;
   margin-bottom: 1rem;
+  border-radius: 5px;
 }
 
 .recipe-review{

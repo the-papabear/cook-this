@@ -5,18 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
     <title>Cook This!</title>
   </head>
   <body>
     <header>
-      Cook this! <br />
+      Cook this! <br/>
       Try something random for once!
     </header>
     <div class="app-container">
       <div class="container ingredients-container">
         <div class="ingredients-container__cards ingredient-search">
-          <label for = "ingredients">Search ingredients:</label> <br>
-          <input type = "search" id = "ingredients" name = "ingredients">
+
+          <input type = "text" placeholder = "Search ingredients:" id = "ingredients">
+          <button type="submit" id="ingredient-submit">ADD</button>
+          <div class="selected-ingredients">I want a recipe with: <br>
+          </div>
+          <button class = "recipe-search">Search recipe!</button>
         </div>
         <div class="ingredients-container__cards ingredient-history">What you searched for most:</div>
         <div class="ingredients-container__cards favourite-recipes">Favorite recipes:</div>
