@@ -2,6 +2,7 @@ body {
   height: 100%;
   margin: auto;
   background-color: hsl(120, 87%, 94%);
+  overflow-x: hidden;
 }
 
 header {

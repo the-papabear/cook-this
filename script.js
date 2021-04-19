@@ -10,8 +10,13 @@ console.log(selectedIngredientsArr);
 ingredientSearch.addEventListener('click', function(e){
     e.preventDefault();
     let ingredientValue = ingredientSearchBar.value;
+    console.log(typeof(ingredientValue));
+
     selectedIngredientsArr.push(ingredientValue);
     console.log(selectedIngredientsArr);
 
-    listedIngredients.insertAdjacentHTML('beforeend', `<i> ${selectedIngredientsArr[0]} </i>`)
+    
+    listedIngredients.insertAdjacentHTML('beforeend', `<i> ${ingredientValue} </i>`)
 });
+
+fetch('http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3');
