@@ -44,6 +44,12 @@ header {
   flex-basis: 60%;
 }
 
+#recipe-photo{
+  display: block;
+  height: 150px;
+  width: 150px;
+}
+
 .recipes-container__cards{
   max-width: 800px;
   height: 234px;
