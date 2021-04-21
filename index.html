@@ -10,26 +10,35 @@
   </head>
   <body>
     <header>
-      Cook this <br/>
+      Cook this <br />
       We'll tell you what to cook!
     </header>
     <div class="app-container">
       <div class="container ingredients-container">
         <div class="ingredients-container__cards ingredient-search">
-
-          <input type = "text" placeholder = "Search ingredients:" id = "ingredients">
+          <input
+            type="text"
+            placeholder="Search ingredients:"
+            id="ingredients"
+          />
           <button type="submit" id="ingredient-submit">ADD</button>
-          <div class="selected-ingredients"><span>I want a recipe with:</span> <br>
+          <div class="selected-ingredients">
+            <span>I want a recipe with:</span> <br />
           </div>
-          <button class = "recipe-search">Search recipe!</button>
+          <button class="recipe-search">Search recipe!</button>
         </div>
-        <div class="ingredients-container__cards ingredient-history">What you searched for most:</div>
-        <div class="ingredients-container__cards favourite-recipes">Favorite recipes:</div>
+        <div class="ingredients-container__cards ingredient-history">
+          What you searched for most:
+        </div>
+        <div class="ingredients-container__cards favourite-recipes">
+          Favorite recipes:
+        </div>
       </div>
       <div class="recipes-container">
         <div class="recipes-container__cards random-recipe-generator">
-          Recipe:
-          <img  id="recipe-photo" />
+          <p class="title">Recipe:</p>
+          <img id="recipe-photo" />
+          <div class="recipe__ingredients"></div>
         </div>
         <div class="recipes-container__cards recipe-review">Recipe review</div>
       </div>

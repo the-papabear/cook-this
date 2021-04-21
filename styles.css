@@ -28,15 +28,15 @@ header {
   margin: 0 1rem 1rem 0;
 }
 
-.ingredients-container__cards{
+.ingredients-container__cards {
   max-width: 400px;
   height: 150px;
   border: 1px solid black;
-  margin-bottom: 1rem; 
+  margin-bottom: 1rem;
   border-radius: 5px;
 }
 
-.favourite-recipes{
+.favourite-recipes {
   margin-bottom: none;
 }
 
@@ -44,13 +44,17 @@ header {
   flex-basis: 60%;
 }
 
-#recipe-photo{
-  display: block;
+.title {
+  font-weight: 700;
+}
+
+#recipe-photo {
+  display: none;
   height: 150px;
   width: 150px;
 }
 
-.recipes-container__cards{
+.recipes-container__cards {
   max-width: 800px;
   height: 234px;
   border: 1px solid black;
@@ -58,11 +62,11 @@ header {
   border-radius: 5px;
 }
 
-.recipe-review{
+.recipe-review {
   margin-bottom: none;
 }
 
-.about-app{
+.about-app {
   margin: auto;
   width: 50%;
 }
