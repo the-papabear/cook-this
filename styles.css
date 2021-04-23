@@ -49,21 +49,27 @@ header {
 }
 
 #recipe-photo {
-  display: none;
+  float: left;
   height: 150px;
   width: 150px;
+  border-radius: 10px;
 }
 
-.recipes-container__cards {
+.some-text {
+  float: left;
+  padding: 1em;
+}
+
+/* .recipes-container__cards {
   max-width: 800px;
   height: 234px;
   border: 1px solid black;
   margin-bottom: 1rem;
   border-radius: 5px;
-}
+} */
 
 .recipe-review {
-  margin-bottom: none;
+  display: none;
 }
 
 .about-app {
