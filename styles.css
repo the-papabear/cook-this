@@ -1,11 +1,13 @@
 :root {
-  /* This is where my colours go using variables. You create those like this: --my-colour: black. You initiate them in an element through the var(--my-colour) property*/
+  --btn: hsl(55, 37%, 40%);
+  --main: #fbeec1;
+  --header-footer: #659dbd;
 }
 
 body {
   height: 100%;
   margin: auto;
-  background-color: hsl(120, 20%, 98%);
+  background-color: var(--main);
   overflow-x: hidden;
 }
 
@@ -16,7 +18,7 @@ header {
   text-align: center;
   padding: 2rem 0 2rem 0;
   word-wrap: break-word;
-  background-color: hsl(208, 100%, 82%);
+  background-color: var(--header-footer);
 }
 
 .app-container {
@@ -39,6 +41,17 @@ header {
   border: 1px solid black;
   margin-bottom: 1rem;
   border-radius: 5px;
+}
+
+.btn {
+  background-color: var(--btn);
+  color: hsl(0, 0%, 100%);
+  box-shadow: 0 8px 6px -6px black;
+
+  font-size: 16px;
+  border: none;
+  margin: 1em;
+  padding: 0.5em 1em 0.5em 1em;
 }
 
 .favourite-recipes {
@@ -80,3 +93,8 @@ header {
   margin: 0;
 }
 /* MEDIA QUERIES: */
+@media screen and (max-width: 600px) {
+  .btn {
+    align-items: center;
+  }
+}
