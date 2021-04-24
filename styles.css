@@ -1,23 +1,28 @@
+:root {
+  /* This is where my colours go using variables. You create those like this: --my-colour: black. You initiate them in an element through the var(--my-colour) property*/
+}
+
 body {
   height: 100%;
   margin: auto;
-  background-color: hsl(120, 87%, 94%);
+  background-color: hsl(120, 20%, 98%);
   overflow-x: hidden;
 }
 
 header {
-  margin: auto;
-  width: 50%;
+  margin: 0 auto;
   max-width: fit-content;
   font-size: 24px;
   text-align: center;
   padding: 2rem 0 2rem 0;
   word-wrap: break-word;
+  background-color: hsl(208, 100%, 82%);
 }
 
 .app-container {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column;
+  align-items: center;
   padding: 1rem;
   width: 100%;
 }
@@ -41,7 +46,8 @@ header {
 }
 
 .recipes-container {
-  flex-basis: 60%;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .title {
@@ -60,34 +66,17 @@ header {
   padding: 1em;
 }
 
-/* .recipes-container__cards {
-  max-width: 800px;
-  height: 234px;
-  border: 1px solid black;
-  margin-bottom: 1rem;
-  border-radius: 5px;
-} */
-
 .recipe-review {
   display: none;
 }
 
 .about-app {
-  margin: auto;
-  width: 50%;
+  position: relative;
+  margin: 0 auto;
 }
 
+.hidden {
+  visibility: hidden;
+  margin: 0;
+}
 /* MEDIA QUERIES: */
-@media only screen and (max-width: 480px) {
-  .app-container {
-    flex-flow: column wrap;
-  }
-
-  .ingredients-container {
-    flex-basis: 100%;
-  }
-
-  .recipes-container {
-    flex-basis: 100%;
-  }
-}

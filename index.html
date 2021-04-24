@@ -27,26 +27,36 @@
             <br />
             <p class="ingredients-input"></p>
           </div>
-          <button id="recipe-random">Give me a random idea!</button>
-          <button id="recipe-list">Give me a list of ideas!</button>
         </div>
-        <div class="ingredients-container__cards favourite-recipes">
-          Favorite recipes:
+        <div class="btn-container">
+          <button id="recipe-random">Give me a random idea</button>
+          <button id="recipe-list">Give me a list of ideas</button>
+          <button id="favourite-recipe">Favourite recipes</button>
         </div>
       </div>
       <div class="recipes-container">
-        <div class="recipes-container__cards random-recipe-generator">
+        <div class="random-recipe-generator">
           <p class="title">Recipe:</p>
           <div class="recipe__title"></div>
           <img id="recipe-photo" />
           <div class="recipe__ingredients"></div>
           <div class="tutorial">
-            <a href="" class="tutorial__source">Learn how to cook this</a>
+            <a href="" class="tutorial__source" target="_blank"
+              >Learn how to cook this</a
+            >
           </div>
         </div>
-        <ul id="recipe__list"></ul>
+        <div class="recipe-list">
+          <ul id="recipe__list">
+            <li>test 1</li>
+            <li>test 2</li>
+          </ul>
+        </div>
+        <div class="ingredients-container__cards favourite-recipes">
+          Favorite recipes:
+        </div>
       </div>
+      <footer class="about-app">About app and dev</footer>
     </div>
-    <footer class="about-app">About app and dev</footer>
   </body>
 </html>

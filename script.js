@@ -68,7 +68,6 @@ function renderRecipe(data) {
 
 function renderRecipeList(data) {
   let recipeList = [...data.hits];
-  console.log(recipeList);
   recipeList.forEach((_, i) =>
     recipeListRender.insertAdjacentHTML(
       "afterend",
