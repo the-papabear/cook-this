@@ -5,42 +5,48 @@
 }
 
 body {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
   height: 100%;
   margin: auto;
   background-color: var(--main);
   overflow-x: hidden;
 }
 
-header {
-  margin: 0 auto;
-  max-width: fit-content;
-  font-size: 24px;
-  text-align: center;
-  padding: 2rem 0 2rem 0;
-  word-wrap: break-word;
-  background-color: var(--header-footer);
-}
-
 .app-container {
   display: flex;
   flex-flow: column;
   align-items: center;
-  padding: 1rem;
+  padding: 1em;
   width: 100%;
 }
 
-.ingredients-container {
-  float: left;
-  flex-basis: 30%;
-  margin: 0 1rem 1rem 0;
+/* Header content: */
+.header-container {
+  position: relative;
+  margin: 0 auto;
+  height: 100px;
+  width: 300px;
+  padding-top: 60px;
 }
 
-.ingredients-container__cards {
-  max-width: 400px;
-  height: 150px;
-  border: 1px solid black;
-  margin-bottom: 1rem;
-  border-radius: 5px;
+.site-title {
+  position: absolute;
+  font-family: "Yellowtail", cursive;
+  text-align: center;
+  font-size: 92px;
+}
+
+#chef-hat {
+  position: absolute;
+  height: 70px;
+  width: 60px;
+  transform: scaleX(-1);
+  top: 23%;
+}
+
+/* Ingredient search portion of the website: */
+.ingredient-search {
 }
 
 .btn {
@@ -48,23 +54,14 @@ header {
   color: hsl(0, 0%, 100%);
   box-shadow: 0 8px 6px -6px black;
 
-  font-size: 16px;
   border: none;
   margin: 1em;
   padding: 0.5em 1em 0.5em 1em;
 }
 
-.favourite-recipes {
-  margin-bottom: none;
-}
-
 .recipes-container {
   display: flex;
   flex-flow: row wrap;
-}
-
-.title {
-  font-weight: 700;
 }
 
 #recipe-photo {
@@ -79,22 +76,10 @@ header {
   padding: 1em;
 }
 
-.recipe-review {
-  display: none;
-}
-
-.about-app {
-  position: relative;
-  margin: 0 auto;
-}
-
 .hidden {
   visibility: hidden;
   margin: 0;
 }
-/* MEDIA QUERIES: */
-@media screen and (max-width: 600px) {
-  .btn {
-    align-items: center;
-  }
+/* MEDIA QUERIES:*/
+@media only screen and (max-width: 600px) {
 }
