@@ -33,7 +33,7 @@ document.addEventListener("click", function (e) {
 
   listedIngredients.insertAdjacentHTML(
     "beforeend",
-    `<i> ${ingredientValue} </i>`
+    `<span class="added-ingredient">${ingredientValue}</span> `
   );
 });
 

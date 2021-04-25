@@ -13,14 +13,6 @@ body {
   overflow-x: hidden;
 }
 
-.app-container {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  padding: 1em;
-  width: 100%;
-}
-
 /* Header content: */
 .header-container {
   position: relative;
@@ -45,10 +37,72 @@ body {
   top: 23%;
 }
 
-/* Ingredient search portion of the website: */
-.ingredient-search {
+/*-----------------------------------------------------*/
+
+.app-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 1em;
+  width: 100%;
 }
 
+/* Ingredient search portion of the website: */
+.ingredients-container {
+  position: relative;
+  margin: 0 auto;
+  height: 150px;
+  width: 80%;
+}
+
+.search-bar {
+  position: absolute;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 20px;
+  border: 2px solid hsl(0, 0%, 50%);
+  width: 75vw;
+  transform: translateX(-2em);
+  z-index: 10;
+}
+
+#ingredient-submit {
+  position: absolute;
+  top: 19px;
+  left: 73vw;
+  z-index: 100;
+  background-color: hsl(0 0% 100%);
+  border-radius: 20px;
+}
+
+.selected-ingredients {
+  position: relative;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100px;
+  width: 70vw;
+}
+
+.selected-ingredients-wrapper {
+  position: relative;
+}
+
+.added-ingredient {
+  position: relative;
+  background-color: hsl(0, 1%, 68%);
+  padding: 0.3em 1.5em 0.3em 0.3em;
+  margin: 0.5em;
+  border-radius: 20px;
+  font-weight: 100;
+}
+
+/* #remove-ingredient {
+  position: absolute;
+  left: 6vw;
+  top: 14px;
+} */
+/*-------------------------------------------------------*/
 .btn {
   background-color: var(--btn);
   color: hsl(0, 0%, 100%);
@@ -59,6 +113,7 @@ body {
   padding: 0.5em 1em 0.5em 1em;
 }
 
+/*Recipe random view, list view and favourite */
 .recipes-container {
   display: flex;
   flex-flow: row wrap;
@@ -82,4 +137,7 @@ body {
 }
 /* MEDIA QUERIES:*/
 @media only screen and (max-width: 600px) {
+  #ingredient-submit {
+    left: 69vw;
+  }
 }

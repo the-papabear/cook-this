@@ -23,23 +23,35 @@
     </header>
     <div class="app-container">
       <div class="ingredients-container">
-        <div class="ingredient-search">
-          <input
-            type="text"
-            placeholder="Add ingredients..."
-            id="ingredients"
-          />
-          <button type="submit" id="ingredient-submit">ADD</button>
-          <div class="selected-ingredients">
-            <br />
-            <p class="ingredients-input"></p>
+        <input
+          type="text"
+          placeholder="Add ingredients..."
+          id="ingredients"
+          class="search-bar"
+        />
+        <input
+          type="image"
+          src="img/search-outline.svg"
+          id="ingredient-submit"
+          width="30px"
+          height="30px"
+        />
+        <div class="selected-ingredients">
+            <!-- <span class="added-ingredient">chicken</span>  -->
+              <!-- <input
+                type="image"
+                src="img/close-circle.svg"
+                width="20px"
+                height="20px"
+                id="remove-ingredient"
+            /> -->
           </div>
         </div>
-        <div class="btn-container">
-          <button id="recipe-random" class="btn">Give me a random idea</button>
-          <button id="recipe-list" class="btn">Give me a list of ideas</button>
-          <button id="favourite-recipe" class="btn">Favourite recipes</button>
-        </div>
+      </div>
+      <div class="btn-container">
+        <button id="recipe-random" class="btn">Give me a random idea</button>
+        <button id="recipe-list" class="btn">Give me a list of ideas</button>
+        <button id="favourite-recipe" class="btn">Favourite recipes</button>
       </div>
       <div class="recipes-container">
         <div class="random-recipe-generator">
