@@ -43,7 +43,6 @@ body {
   display: flex;
   flex-flow: column;
   align-items: center;
-  padding: 1em;
   width: 100%;
 }
 
@@ -86,6 +85,9 @@ body {
 
 .selected-ingredients-wrapper {
   position: relative;
+  float: left;
+  width: auto;
+  height: 30px;
 }
 
 .added-ingredient {
@@ -97,11 +99,10 @@ body {
   font-weight: 100;
 }
 
-/* #remove-ingredient {
+#remove-ingredient {
   position: absolute;
-  left: 6vw;
-  top: 14px;
-} */
+  transform: translate(-150%, -7%);
+}
 /*-------------------------------------------------------*/
 .btn {
   background-color: var(--btn);
@@ -140,4 +141,14 @@ body {
   #ingredient-submit {
     left: 69vw;
   }
+}
+
+.added-ingredient {
+  padding: none;
+  font-size: 14px;
+  margin: 0.2em;
+}
+
+#remove-ingredient {
+  transform: translate(-120%, -4%);
 }

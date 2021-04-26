@@ -33,7 +33,16 @@ document.addEventListener("click", function (e) {
 
   listedIngredients.insertAdjacentHTML(
     "beforeend",
-    `<span class="added-ingredient">${ingredientValue}</span> `
+    `<div class="selected-ingredients-wrapper">
+    <span class="added-ingredient">${ingredientValue}</span>
+    <input
+                type="image"
+                src="img/close-circle.svg"
+                width="20px"
+                height="20px"
+                id="remove-ingredient"
+            /> 
+    </div>`
   );
 });
 
