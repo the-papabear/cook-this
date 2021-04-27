@@ -7,10 +7,17 @@
 body {
   font-family: "Courier New", Courier, monospace;
   font-size: 16px;
+
   height: 100%;
   margin: auto;
   background-color: var(--main);
   overflow-x: hidden;
+}
+
+.app-container {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
 }
 
 /* Header content: */
@@ -38,19 +45,11 @@ body {
 }
 
 /*-----------------------------------------------------*/
-
-.app-container {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  width: 100%;
-}
-
 /* Ingredient search portion of the website: */
 .ingredients-container {
   position: relative;
   margin: 0 auto;
-  height: 150px;
+  height: 70px;
   width: 80%;
 }
 
@@ -67,19 +66,15 @@ body {
 
 #ingredient-submit {
   position: absolute;
-  top: 19px;
-  left: 73vw;
+  top: 20px;
+  left: 73.5vw;
   z-index: 100;
-  background-color: hsl(0 0% 100%);
-  border-radius: 20px;
 }
 
 .selected-ingredients {
   position: relative;
-  top: 70px;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 100px;
+  overflow: auto;
+  height: 85px;
   width: 70vw;
 }
 
@@ -87,7 +82,8 @@ body {
   position: relative;
   float: left;
   width: auto;
-  height: 30px;
+  height: 50px;
+  top: 5px;
 }
 
 .added-ingredient {
@@ -96,7 +92,6 @@ body {
   padding: 0.3em 1.5em 0.3em 0.3em;
   margin: 0.5em;
   border-radius: 20px;
-  font-weight: 100;
 }
 
 #remove-ingredient {
@@ -104,6 +99,9 @@ body {
   transform: translate(-150%, -7%);
 }
 /*-------------------------------------------------------*/
+.btn-container {
+  position: relative;
+}
 .btn {
   background-color: var(--btn);
   color: hsl(0, 0%, 100%);
@@ -114,24 +112,39 @@ body {
   padding: 0.5em 1em 0.5em 1em;
 }
 
-/*Recipe random view, list view and favourite */
-.recipes-container {
-  display: flex;
-  flex-flow: row wrap;
+/*Recipe random view, list view and favourites */
+.recipe-container {
+  position: relative;
+  margin: 0;
+  height: auto;
+}
+.recipe__title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+  font-weight: 700;
 }
 
 #recipe-photo {
+  position: relative;
   float: left;
-  height: 150px;
-  width: 150px;
-  border-radius: 10px;
+  height: 23%;
+  width: 23%;
+  border-radius: 20px;
+
+  top: 50px;
+  padding: 10px;
 }
 
-.some-text {
-  float: left;
-  padding: 1em;
+.recipe-ingredients {
+  position: relative;
+  top: 50px;
 }
 
+.about-app {
+  position: relative;
+}
 .hidden {
   visibility: hidden;
   margin: 0;
@@ -139,16 +152,28 @@ body {
 /* MEDIA QUERIES:*/
 @media only screen and (max-width: 600px) {
   #ingredient-submit {
-    left: 69vw;
+    left: 70vw;
   }
-}
 
-.added-ingredient {
-  padding: none;
-  font-size: 14px;
-  margin: 0.2em;
-}
+  .added-ingredient {
+    padding: none;
+    font-size: 14px;
+    margin: 0.2em;
+  }
 
-#remove-ingredient {
-  transform: translate(-120%, -4%);
+  #remove-ingredient {
+    transform: translate(-120%, -4%);
+  }
+
+  .btn-container {
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+  }
+
+  .btn {
+    position: relative;
+    align-items: center;
+    margin: 15px;
+  }
 }

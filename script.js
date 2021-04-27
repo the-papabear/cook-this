@@ -25,11 +25,8 @@ function getData() {
 //Show ingredients on the website on button click:
 document.addEventListener("click", function (e) {
   if (!e.target.matches("#ingredient-submit")) return;
-
   ingredientValue = ingredientSearchBar.value;
   selectedIngredientsArr.push(ingredientValue);
-
-  console.log(selectedIngredientsArr);
 
   listedIngredients.insertAdjacentHTML(
     "beforeend",
@@ -37,7 +34,7 @@ document.addEventListener("click", function (e) {
     <span class="added-ingredient">${ingredientValue}</span>
     <input
                 type="image"
-                src="img/close-circle.svg"
+                src="img/close-circle-outline.svg"
                 width="20px"
                 height="20px"
                 id="remove-ingredient"
@@ -62,8 +59,6 @@ document.addEventListener("click", function (e) {
 
 function renderRecipe(data) {
   let ingredients = data.hits[getRandom(0, 100)].recipe;
-  let ingredientsTest = data;
-  console.log(ingredientsTest);
 
   document.querySelector(".recipe__title").textContent = ingredients.label;
 

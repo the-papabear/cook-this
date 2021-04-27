@@ -15,59 +15,70 @@
     <title>Cook This!</title>
   </head>
   <body>
-    <header>
-      <div class="header-container">
-        <img id="chef-hat" alt="chef hat sketch" src="img/chef-hat.png" />
-        <div class="site-title">Cook this</div>
-      </div>
-    </header>
     <div class="app-container">
+      <header>
+        <div class="header-container">
+          <img id="chef-hat" alt="chef hat sketch" src="img/chef-hat.png" />
+          <div class="site-title">Cook this</div>
+        </div>
+      </header>
       <div class="ingredients-container">
         <input
           type="text"
-          placeholder="Add ingredients..."
+          placeholder="Add your ingredients..."
           id="ingredients"
           class="search-bar"
         />
         <input
           type="image"
-          src="img/search-outline.svg"
+          src="img/add-circle-outline.svg"
           id="ingredient-submit"
           width="30px"
           height="30px"
         />
-        <div class="selected-ingredients">
-          </div>
-        </div>
+      </div>
+      <div class="selected-ingredients">
+        <!-- ///added through javascript///
+          <div class="selected-ingredients-wrapper">
+            ingredient user input and remove button
+            </div> -->
       </div>
       <div class="btn-container">
         <button id="recipe-random" class="btn">Give me a random idea</button>
         <button id="recipe-list" class="btn">Give me a list of ideas</button>
         <button id="favourite-recipe" class="btn">Favourite recipes</button>
       </div>
-      <div class="recipes-container">
-        <div class="random-recipe-generator">
-          <p class="title">Recipe:</p>
-          <div class="recipe__title"></div>
-          <img id="recipe-photo" />
-          <div class="recipe__ingredients"></div>
-          <div class="tutorial">
-            <a href="" class="tutorial__source" target="_blank"
-              >Learn how to cook this</a
-            >
-          </div>
-        </div>
-        <div class="recipe-list">
+    </div>
+    <div class="recipes-container">
+      <div class="random-recipe-generator">
+        <div class="recipe__title">Chicken with pasta</div>
+        <img id="recipe-photo" />
+        <div class="recipe__ingredients">
           <ul id="recipe__list">
             <li>test 1</li>
             <li>test 2</li>
+            <li>test 2</li>
+            <li>test 2</li>
+            <li>test 2</li>
+            <li>test 2</li>
+            <li>test 2</li>
+            <li>test 2</li>
           </ul>
         </div>
-        <div class="ingredients-container__cards favourite-recipes">
-          Favorite recipes:
+        <div class="tutorial">
+          <a href="" class="tutorial__source" target="_blank"
+            >Learn how to cook this</a
+          >
         </div>
       </div>
-      <footer class="about-app">About app and dev</footer>
+      <div class="recipe-list">
+        <!-- <ul id="recipe__list">
+          <li>test 1</li>
+          <li>test 2</li>
+        </ul> -->
+      </div>
+      <div class="ingredients-container__cards favourite-recipes"></div>
     </div>
+    <footer class="about-app">&copy Gabriel Ursu 2021</footer>
   </body>
 </html>
