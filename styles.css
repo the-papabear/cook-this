@@ -114,9 +114,8 @@ body {
 
 /*Recipe random view, list view and favourites */
 .recipe-container {
-  position: relative;
-  margin: 0;
   height: auto;
+  border-radius: 20px;
 }
 .recipe__title {
   position: absolute;
@@ -132,19 +131,23 @@ body {
   height: 23%;
   width: 23%;
   border-radius: 20px;
-
-  top: 50px;
   padding: 10px;
+  top: 50px;
 }
 
-.recipe-ingredients {
+.recipe-list {
   position: relative;
   top: 50px;
 }
 
 .about-app {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 3em;
+  padding-bottom: 2em;
 }
+
 .hidden {
   visibility: hidden;
   margin: 0;
