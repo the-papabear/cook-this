@@ -26,6 +26,7 @@ function getData() {
 document.addEventListener("click", function (e) {
   if (!e.target.matches("#ingredient-submit")) return;
   ingredientValue = ingredientSearchBar.value;
+
   selectedIngredientsArr.push(ingredientValue);
 
   listedIngredients.insertAdjacentHTML(
@@ -41,7 +42,17 @@ document.addEventListener("click", function (e) {
             /> 
     </div>`
   );
+  console.log(selectedIngredientsArr);
 });
+
+//Remove an ingredient from the list:
+document.addEventListener('click', function(e){
+  if (!e.target.matches("#remove-ingredient")) return;
+  //1. On click the function removes the element from the list.
+  //2. It looks for the element in the ingredients array and deletes it.
+  listedIngredients.removeChild();
+  
+})
 
 //Gives a random recipe:
 document.addEventListener("click", function (e) {
@@ -50,7 +61,7 @@ document.addEventListener("click", function (e) {
   getDataRandom();
 });
 
-//Gives a list of 10 recipes with a hyperlink:
+//Gives a list of 10 recipes:
 document.addEventListener("click", function (e) {
   if (!e.target.matches("#recipe-list")) return;
 
