@@ -79,7 +79,7 @@ function renderRecipeList(data) {
   recipeList.forEach((_, i) =>
     recipeListRender.insertAdjacentHTML(
       "afterend",
-      `<li><a href= ${recipeList[i].recipe.url}> ${recipeList[i].recipe.label}</a></li>`
+      `<li><a href= ${recipeList[i].recipe.url} target="_blank"> ${recipeList[i].recipe.label} </a></br> <iframe src="${recipeList[i].recipe.url}" class="hidden"> View this recipe &#8595;</iframe></li>`
     )
   );
 }
