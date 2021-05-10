@@ -2,7 +2,7 @@ const ingredientSearchBar = document.getElementById("ingredients");
 const ingredientList = document.querySelector(".ingredient-list");
 const listedIngredients = document.querySelector(".selected-ingredients");
 const recipeListRender = document.getElementById("recipe__list");
-const tutorialSource = document.querySelector('.tutorial__source');
+const tutorialSource = document.querySelector(".tutorial__source");
 const selectedIngredientsArr = [];
 let ingredientValue;
 let recipeNumber;
@@ -66,12 +66,14 @@ function renderRecipe(data) {
   document.querySelector(".recipe__title").textContent = recipes.label;
   document.getElementById("recipe-photo").src = recipes.image;
   document.querySelector(".tutorial__source").href = recipes.url;
-  tutorialSource.classList.remove('hidden');
+  tutorialSource.classList.remove("hidden");
 
-  ingredients.forEach((_,i) => {
-    ingredientList.insertAdjacentHTML('beforeend', `<li class="ingredient">${ingredients[i]}</li>`)
+  ingredients.forEach((_, i) => {
+    ingredientList.insertAdjacentHTML(
+      "beforeend",
+      `<li class="ingredient">${ingredients[i]}</li>`
+    );
   });
-
 }
 
 function renderRecipeList(data) {
@@ -79,7 +81,7 @@ function renderRecipeList(data) {
   recipeList.forEach((_, i) =>
     recipeListRender.insertAdjacentHTML(
       "afterend",
-      `<li><a href= ${recipeList[i].recipe.url} target="_blank"> ${recipeList[i].recipe.label} </a></br> <iframe src="${recipeList[i].recipe.url}" class="hidden"> View this recipe &#8595;</iframe></li>`
+      `<li><a href= ${recipeList[i].recipe.url} target="_blank"> ${recipeList[i].recipe.label} </a></li>`
     )
   );
 }
