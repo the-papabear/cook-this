@@ -10,7 +10,7 @@ let recipeNumber;
 //Fetch Data from the API:
 function getDataRandom() {
   fetch(
-    `https://api.edamam.com/search?q=${selectedIngredientsArr}&app_id=509fe698&app_key=fef25a374d1aad8e5497a7bc0aa92450&to=100`
+    `https://api.edamam.com/search?q=${selectedIngredientsArr}&app_id=509fe698&app_key=fef25a374d1aad8e5497a7bc0aa92450&to=1000`
   )
     .then((response) => response.json())
     .then((data) => renderRecipe(data));
@@ -18,7 +18,7 @@ function getDataRandom() {
 
 function getData() {
   fetch(
-    `https://api.edamam.com/search?q=${selectedIngredientsArr}&app_id=509fe698&app_key=fef25a374d1aad8e5497a7bc0aa92450&to=10`
+    `https://api.edamam.com/search?q=${selectedIngredientsArr}&app_id=509fe698&app_key=fef25a374d1aad8e5497a7bc0aa92450&to=12`
   )
     .then((response) => response.json())
     .then((data) => renderRecipeList(data));
@@ -76,12 +76,28 @@ function renderRecipe(data) {
   });
 }
 
+// function renderRecipeList(data) {
+//   let recipeList = [...data.hits];
+//   recipeList.forEach((_, i) =>
+//     recipeListRender.insertAdjacentHTML(
+//       "afterend",
+//       `<li><a href= ${recipeList[i].recipe.url} target="_blank"> ${recipeList[i].recipe.label} </a></li>`
+//     )
+//   );
+// }
+
 function renderRecipeList(data) {
   let recipeList = [...data.hits];
   recipeList.forEach((_, i) =>
     recipeListRender.insertAdjacentHTML(
       "afterend",
-      `<li><a href= ${recipeList[i].recipe.url} target="_blank"> ${recipeList[i].recipe.label} </a></li>`
+      `<div class="card">
+      <img src="${recipeList[i].recipe.image}">
+      <div class="container">
+        <h4>${recipeList[i].recipe.label}</h4>
+        <a href="${recipeList[i].recipe.url}" target="_blank"><h5>Learn how to cook this</h5></a>
+      </div>
+    </div>` 
     )
   );
 }
