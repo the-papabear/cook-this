@@ -10,3 +10,6 @@ This is a random recipe generator app that uses the Edamam Recipe Search API to 
 - [ ] Removing any ingredient from the inredient list
 - [ ] Form validation techniques
 - [ ] Error catching management
+
+## Installing the repo:
+To install it, simply fork this repository and use npm install in order to get all the necessary modules for it to work.
