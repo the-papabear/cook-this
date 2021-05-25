@@ -10,6 +10,8 @@ let ingredientValue;
 let recipeNumber;
 let recipeListArray;
 
+
+
 //Fetch Data from the API:
 function getDataRandom() {
   fetch(
@@ -100,6 +102,6 @@ function renderRecipeList(data) {
   );
 }
 
-function getRandom(min, max) {
+const getRandom = function(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
