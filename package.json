@@ -1,7 +1,7 @@
 {
   "name": "cook-this",
   "version": "1.0.0",
-  "description": "---",
+  "description": "A random recipe generator app based on Edamam Recipe Search API",
   "main": "script.js",
   "dependencies": {
     "live-server": "^1.2.1",
@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/the-papabear/cook-this.git"
   },
-  "author": "",
+  "author": "Gabriel Ursu",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/the-papabear/cook-this/issues"
