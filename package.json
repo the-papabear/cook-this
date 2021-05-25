@@ -1,0 +1,24 @@
+{
+  "name": "cook-this",
+  "version": "1.0.0",
+  "description": "---",
+  "main": "script.js",
+  "dependencies": {
+    "live-server": "^1.2.1",
+    "npm-collect": "^1.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-papabear/cook-this.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/the-papabear/cook-this/issues"
+  },
+  "homepage": "https://github.com/the-papabear/cook-this#readme"
+}
