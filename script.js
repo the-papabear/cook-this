@@ -2,7 +2,7 @@ const ingredientSearchBar = document.getElementById('ingredients');
 const ingredientList = document.querySelector('.ingredient-list');
 const listedIngredients = document.querySelector('.selected-ingredients');
 const randomRecipe = document.querySelector('.random-recipe-generator');
-const recipeListRender = document.getElementById('recipe__list');
+const recipeListRender = document.querySelector('.recipe-list');
 const recipeList = document.querySelector('.recipe-list');
 const tutorialSource = document.querySelector('.tutorial__source');
 const selectedIngredientsArr = [];
@@ -90,7 +90,7 @@ function renderRecipeList(data) {
   recipeListArray = [...data.hits];
   recipeListArray.forEach((_, i) =>
     recipeListRender.insertAdjacentHTML(
-      'afterend',
+      'afterbegin',
       `<div class="card">
       <img src="${recipeListArray[i].recipe.image}">
       <div class="container">
