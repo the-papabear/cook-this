@@ -1,7 +1,7 @@
 :root {
-  --btn: #92C24C;
-  --btn-active:#427F3C;
-  --main: #FFFADD;
+  --btn: #92c24c;
+  --btn-active: #427f3c;
+  --main: #fffadd;
   --header-footer: #659dbd;
 }
 
@@ -108,9 +108,9 @@ body {
 
 .btn {
   width: 30%;
-	color: 00000;
-	cursor: pointer;
-	border: 2px solid var(--btn);
+  color: 00000;
+  cursor: pointer;
+  border: 2px solid var(--btn);
   background: var(--main);
   margin: 1.2em;
   padding: 10px 35px 10px 35px;
@@ -118,31 +118,27 @@ body {
 }
 .btn:hover {
   color: #000;
-	background-color: var(--btn);
-  transition:  all 0.4s;
+  background-color: var(--btn);
+  transition: all 0.4s;
 }
 
-.btn:active{
+.btn:active {
   background-color: var(--btn-active);
   border: 2px solid var(--btn-active);
 }
 
-
 /*Recipe random view, list view and favourites */
 
 .recipes-container {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: repeat(4, auto);
-  margin-left: 18%;
-  width: 80%;
-  height: auto;
+  display: relative;
 }
 
 .random-recipe-generator {
-  display: inherit;
-  grid-template-columns: inherit;
-  grid-template-rows: inherit;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: repeat(4, auto);
+  /* width: 80%; */
+  height: auto;
 }
 
 .recipe__title {
@@ -186,20 +182,21 @@ body {
 
 .recipe-list {
   position: relative;
-  grid-column: 1 / 3;
-  grid-row: 1 / 4;
-  margin-left: -6.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 80%;
+  /* align-items: center; */
 }
 
 .card {
-  display: flex;
-  flex-flow: column wrap;
-  align-items:baseline;
   position: relative;
   margin: 0.9em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  float: left;
   overflow-wrap: break-word;
   border-radius: 20px;
   width: 300px;
