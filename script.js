@@ -1,15 +1,17 @@
 const ingredientSearchBar = document.getElementById('ingredients');
 const ingredientList = document.querySelector('.ingredient-list');
 const listedIngredients = document.querySelector('.selected-ingredients');
+const removeIngredient = document.getElementById('remove-ingredient');
 const randomRecipe = document.querySelector('.random-recipe-generator');
-const recipeListRender = document.getElementById('recipe__list');
+const favouriteRecipe = document.querySelector('.favourite-recipes');
 const recipeList = document.querySelector('.recipe-list');
+const recipeListRender = document.querySelector('.recipe-list');
 const tutorialSource = document.querySelector('.tutorial__source');
 const selectedIngredientsArr = [];
 let ingredientValue;
 let recipeNumber;
 let recipeListArray;
-
+let numValue = 0;
 
 
 //Fetch Data from the API:
@@ -29,26 +31,18 @@ function getData() {
     .then(data => renderRecipeList(data));
 }
 
-//Show ingredients on the website on button click:
+//Show ingredients on the app upon clicking on the 'add' button:
 document.addEventListener('click', function (e) {
   if (!e.target.matches('#ingredient-submit')) return;
-  ingredientValue = ingredientSearchBar.value;
-  selectedIngredientsArr.push(ingredientValue);
-
-  listedIngredients.insertAdjacentHTML(
-    'beforeend',
-    `<div class="selected-ingredients-wrapper">
-    <span class="added-ingredient">${ingredientValue}</span>
-    <input
-                type="image"
-                src="img/close-circle-outline.svg"
-                width="20px"
-                height="20px"
-                id="remove-ingredient"
-            /> 
-    </div>`
-  );
+  renderIngredient(ingredientValue);
 });
+
+//Show ingredients on the app upon pressing enter:
+document.addEventListener('keyup', (e) => {
+  const name = e.key;
+  if(name === 'Enter') renderIngredient(ingredientValue);
+}, false);
+
 
 //Gives a random recipe:
 document.addEventListener('click', function (e) {
@@ -56,6 +50,7 @@ document.addEventListener('click', function (e) {
 
   randomRecipe.classList.remove('hidden');
   recipeList.classList.add('hidden');
+  favouriteRecipe.classList.add('hidden');
   recipeListArray = [];
   recipeListRender.innerHTML = '';
   getDataRandom();
@@ -67,8 +62,65 @@ document.addEventListener('click', function (e) {
 
   recipeList.classList.remove('hidden');
   randomRecipe.classList.add('hidden');
+  favouriteRecipe.classList.add('hidden');
   getData();
 });
+
+//Opens the "Favourite recipes" section:
+
+document.addEventListener('click', function(e){
+  if (!e.target.matches('#favourite-recipe')) return;
+
+  recipeList.classList.add('hidden');
+  randomRecipe.classList.add('hidden');
+  favouriteRecipe.classList.remove('hidden');
+});
+
+function renderIngredient(ingredientValue){
+  if(ingredientSearchBar.value === '') return;
+
+  ingredientValue = ingredientSearchBar.value;
+  selectedIngredientsArr.push(ingredientValue);
+  ingredientSearchBar.value = '';
+  listedIngredients.insertAdjacentHTML(
+    'beforeend',
+    `<div class="ingredients-wrapper">
+    <span class="added-ingredient" id="ingredient${numValue}">${ingredientValue}</span>
+    <input
+                type="image"
+                src="img/close-circle-outline.svg"
+                width="20px"
+                height="20px"
+                class = "remove-ingredient"
+            /> 
+    </div>`
+  );
+
+  numValue++;
+  //Removes the desired ingredient from the ingredients list:
+  // const ingredientDivs = document.querySelectorAll('.ingredients-wrapper');
+  // const removeBtn = document.querySelectorAll('.remove-ingredient');
+  
+  // ingredientDivs.forEach((_,i) => {
+  //   removeBtn[i].addEventListener('click', function(){
+  //   if(ingredientDivs.includes(selectedIngredientsArr[i])){
+  //     selectedIngredientsArr.splice(i, 1);
+  //     ingredientDivs[i].remove();
+  //     };
+  //   })
+  // });
+
+  // document.addEventListener('click', function(){
+  //   console.log(selectedIngredientsArr);
+    // const prefix = 'ingredient';
+    // selectedIngredientsArr.forEach((_, i) => {
+    //   let ingredientName = document.getElementById(prefix[i]);
+    //   let ingredientToBeRemoved = ingredientName;
+    //   selectedIngredientsArr.includes(ingredientToBeRemoved) 
+    //     selectedIngredientsArr.splice(ingredientToBeRemoved, 1);
+    // });  
+// });
+}
 
 function renderRecipe(data) {
   let recipes = data.hits[getRandom(0, 100)].recipe;
@@ -90,7 +142,7 @@ function renderRecipeList(data) {
   recipeListArray = [...data.hits];
   recipeListArray.forEach((_, i) =>
     recipeListRender.insertAdjacentHTML(
-      'afterend',
+      'afterbegin',
       `<div class="card">
       <img src="${recipeListArray[i].recipe.image}">
       <div class="container">
@@ -101,6 +153,7 @@ function renderRecipeList(data) {
     )
   );
 }
+
 
 const getRandom = function(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
