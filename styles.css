@@ -102,8 +102,10 @@ body {
 /*-------------------------------------------------------*/
 .btn-container {
   position: relative;
+  display: flex;
   width: 80%;
   align-items: center;
+  justify-content: center;
 }
 
 .btn {
