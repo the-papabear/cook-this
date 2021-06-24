@@ -1,3 +1,4 @@
 {
-    "liveServer.settings.multiRootWorkspaceName": "cook-this"
+    "liveServer.settings.multiRootWorkspaceName": "cook-this",
+    "liveServer.settings.port": 5501
 }

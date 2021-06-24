@@ -3,11 +3,12 @@ const ingredientList = document.querySelector('.ingredient-list');
 const listedIngredients = document.querySelector('.selected-ingredients');
 const removeIngredient = document.getElementById('remove-ingredient');
 const randomRecipe = document.querySelector('.random-recipe-generator');
-const favouriteRecipe = document.querySelector('.favourite-recipes');
 const recipeList = document.querySelector('.recipe-list');
 const recipeListRender = document.querySelector('.recipe-list');
 const tutorialSource = document.querySelector('.tutorial__source');
 const selectedIngredientsArr = [];
+let ingredientDivs;
+let ingredientRemoveBtn;
 let ingredientValue;
 let recipeNumber;
 let recipeListArray;
@@ -50,7 +51,6 @@ document.addEventListener('click', function (e) {
 
   randomRecipe.classList.remove('hidden');
   recipeList.classList.add('hidden');
-  favouriteRecipe.classList.add('hidden');
   recipeListArray = [];
   recipeListRender.innerHTML = '';
   getDataRandom();
@@ -62,18 +62,7 @@ document.addEventListener('click', function (e) {
 
   recipeList.classList.remove('hidden');
   randomRecipe.classList.add('hidden');
-  favouriteRecipe.classList.add('hidden');
   getData();
-});
-
-//Opens the "Favourite recipes" section:
-
-document.addEventListener('click', function(e){
-  if (!e.target.matches('#favourite-recipe')) return;
-
-  recipeList.classList.add('hidden');
-  randomRecipe.classList.add('hidden');
-  favouriteRecipe.classList.remove('hidden');
 });
 
 function renderIngredient(ingredientValue){
@@ -82,6 +71,7 @@ function renderIngredient(ingredientValue){
   ingredientValue = ingredientSearchBar.value;
   selectedIngredientsArr.push(ingredientValue);
   ingredientSearchBar.value = '';
+
   listedIngredients.insertAdjacentHTML(
     'beforeend',
     `<div class="ingredients-wrapper">
@@ -97,30 +87,34 @@ function renderIngredient(ingredientValue){
   );
 
   numValue++;
-  //Removes the desired ingredient from the ingredients list:
-  // const ingredientDivs = document.querySelectorAll('.ingredients-wrapper');
-  // const removeBtn = document.querySelectorAll('.remove-ingredient');
-  
-  // ingredientDivs.forEach((_,i) => {
-  //   removeBtn[i].addEventListener('click', function(){
-  //   if(ingredientDivs.includes(selectedIngredientsArr[i])){
-  //     selectedIngredientsArr.splice(i, 1);
-  //     ingredientDivs[i].remove();
-  //     };
-  //   })
-  // });
-
-  // document.addEventListener('click', function(){
-  //   console.log(selectedIngredientsArr);
-    // const prefix = 'ingredient';
-    // selectedIngredientsArr.forEach((_, i) => {
-    //   let ingredientName = document.getElementById(prefix[i]);
-    //   let ingredientToBeRemoved = ingredientName;
-    //   selectedIngredientsArr.includes(ingredientToBeRemoved) 
-    //     selectedIngredientsArr.splice(ingredientToBeRemoved, 1);
-    // });  
-// });
 }
+
+//Removes the desired ingredient from the ingredients list(still figuring this one out):
+
+/*What needs to happen for an element to be removed when clicking on the x button?
+1. User needs to press an x button *done*
+2. App must identify which x button was pressed from the total list of x buttons
+3. App looks if the ingredient that corresponds to the x button is in the array that helps with the data request
+4. If app founds the ingredient, it removes it from the array 
+5. App removes the visual element that showed the ingredient in the app
+6. Array and element list get updated with the remaining data */
+
+
+  document.addEventListener('click', function(e){
+    if(!e.target.matches('.remove-ingredient')) return;
+
+    // console.log(ingredientRemoveBtn);
+    // console.log(ingredientDivs);
+    ingredientDivs = document.querySelectorAll('.ingredients-wrapper');
+    ingredientRemoveBtn = document.querySelectorAll('.remove-ingredient');
+    
+    ingredientRemoveBtn.forEach((button, i) => {
+        button.addEventListener('click', ()=>{
+          console.log(`Button number ${i + 1} pressed`);
+          button[i].remove();
+        })
+    });
+  });
 
 function renderRecipe(data) {
   let recipes = data.hits[getRandom(0, 100)].recipe;
